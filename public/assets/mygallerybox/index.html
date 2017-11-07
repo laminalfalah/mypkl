@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyGalleryBox - Jquery Plugin for Gallery & LightBox</title>
+	<link rel="stylesheet" type="text/css" href="css/default.css"/>
+	<link rel="stylesheet" type="text/css" href="css/mygallery.css"/>
+</head>
+<body>
+
+<div class="container">
+	<div class="page-title">
+		<h1>MyGalleryBox Version 1.0<br/><small>A Simple Jquery Plugin For Gallery</small></h1>
+		<small>By <a href="http://www.syakirurohman.net">Syakir Rahman</a></small>
+	</div>
+
+	<p>MyGalleryBox is a simple jquery plugin to make simple gallery and lightbox. It's easy to use, good-looking and has some cool features. Those are responsive, grid option for gallery, navigation by keyboard, etc.</p>
+	<br/>
+	<p>Before using, you have to call the libraries as shown below.</p>
+
+	<pre class="code">
+&lt;!-- Add this inside &lt;head&gt; tag --&gt;
+&lt;link rel="stylesheet" type="text/css" href="css/mygallery.css"/&gt;
+	</pre>
+
+	<pre class="code">
+&lt;!-- Add this before &lt;/body&gt; --&gt;
+&lt;script type="text/javascript" src="js/jquery-2.1.3.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="js/mygallery.js"&gt&lt;/script&gt;
+	</pre>
+
+
+	<h2>Example 1 : Grid Gallery with Lightbox</h2>
+	<p>You can create a grid gallery with a simple setting. </p>
+	<h3>HTML</h3>
+	<pre class="code">
+&lt;div class="example1"&gt;
+    &lt;a href="<span class="green">images/1.jpg</span>" title="Lorem ipsum dolor sit amet"&gt;&lt;img src="<span class="red">images/1.jpg</span>" alt="Gambar 1"/&gt;&lt;/a&gt;
+    &lt;a href="<span class="green">images/2.jpg</span>" title="Lorem ipsum dolor sit amet 2"&gt;&lt;img src="<span class="red">images/2.jpg</span>" alt="Gambar 2"/&gt;&lt;/a&gt;
+    &lt;a href="<span class="green">images/3.jpg</span>" title="Lorem ipsum dolor sit amet 3"&gt;&lt;img src="<span class="red">images/3.jpg</span>" alt="Gambar 3"/&gt;&lt;/a&gt;
+    &lt;a href="<span class="green">images/4.jpg</span>" title="Lorem ipsum dolor sit amet 4"&gt;&lt;img src="<span class="red">images/4.jpg</span>" alt="Gambar 4"/&gt;&lt;/a&gt;
+    &lt;a href="<span class="green">images/5.jpg</span>" title="Lorem ipsum dolor sit amet 5"&gt;&lt;img src="<span class="red">images/5.jpg</span>" alt="Gambar 5"/&gt;&lt;/a&gt;
+    &lt;a href="<span class="green">images/6.jpg</span>" title="Lorem ipsum dolor sit amet 6"&gt;&lt;img src="<span class="red">images/6.jpg</span>" alt="Gambar 6"/&gt;&lt;/a&gt;
+    &lt;a href="<span class="green">images/7.jpg</span>" title="Lorem ipsum dolor sit amet 7"&gt;&lt;img src="<span class="red">images/7.jpg</span>" alt="Gambar 7"/&gt;&lt;/a&gt;
+    &lt;a href="<span class="green">images/8.jpg</span>" title="Lorem ipsum dolor sit amet 8"&gt;&lt;img src="<span class="red">images/8.jpg</span>" alt="Gambar 8"/&gt;&lt;/a&gt;
+    &lt;a href="<span class="green">images/9.jpg</span>" title="Lorem ipsum dolor sit amet 9"&gt;&lt;img src="<span class="red">images/9.jpg</span>" alt="Gambar 9"/&gt;&lt;/a&gt;
+    &lt;a href="<span class="green">images/10.jpg</span>" title="Lorem ipsum dolor sit amet 10"&gt;&lt;img src="<span class="red">images/10.jpg</span>" alt="Gambar 10"/&gt;&lt;/a&gt;
+&lt;/div&gt;	</pre>
+	The codes with green color is url of main image. The codes with red color is image url of thumbnail. You can use different image for thumbnail.
+	<h3>Jquery</h3>
+	<pre class="code">
+$(document).ready(function() {	
+	$(".example1").mygallery({
+	grid: 6
+	});
+});	</pre>
+	<p>If you don't set "grid" option, the default value is "3".</p>
+
+	<h3>Result</h3>
+	<div class="example1">
+		<a href="images/1.jpg" title="Lorem ipsum dolor sit amet"><img src="images/1.jpg" alt="Gambar 1"/></a>
+		<a href="images/2.jpg" title="Lorem ipsum dolor sit amet 2"><img src="images/2.jpg" alt="Gambar 2"/></a>
+		<a href="images/3.jpg" title="Lorem ipsum dolor sit amet 3"><img src="images/3.jpg" alt="Gambar 3"/></a>
+		<a href="images/4.jpg" title="Lorem ipsum dolor sit amet 4"><img src="images/4.jpg" alt="Gambar 4"/></a>
+		<a href="images/5.jpg" title="Lorem ipsum dolor sit amet 5"><img src="images/5.jpg" alt="Gambar 5"/></a>
+		<a href="images/6.jpg" title="Lorem ipsum dolor sit amet 6"><img src="images/6.jpg" alt="Gambar 6"/></a>
+		<a href="images/7.jpg" title="Lorem ipsum dolor sit amet 7"><img src="images/7.jpg" alt="Gambar 7"/></a>
+		<a href="images/8.jpg" title="Lorem ipsum dolor sit amet 8"><img src="images/8.jpg" alt="Gambar 8"/></a>
+		<a href="images/9.jpg" title="Lorem ipsum dolor sit amet 9"><img src="images/9.jpg" alt="Gambar 9"/></a>
+		<a href="images/10.jpg" title="Lorem ipsum dolor sit amet 10"><img src="images/10.jpg" alt="Gambar 10"/></a>
+	</div>
+	<br/>
+
+	<h2>Example 2 : No-Grid Gallery with Lightbox</h2>
+
+	<p>If you don't want use the default grid style, or want to use your own grid style, you can set grid option with "0" value.</p>
+
+	<h3>Jquery</h3>
+	<pre class="code">
+$(document).ready(function() {	
+	$(".example1").mygallery({
+	grid: 0
+	});
+});	</pre>
+
+	<h3>Result</h3>
+	<div class="example2">
+		<a href="images/1.jpg" title="Lorem ipsum dolor sit amet"><img src="images/1.jpg" alt="Gambar 1"/></a>
+		<a href="images/2.jpg" title="Lorem ipsum dolor sit amet 2"><img src="images/2.jpg" alt="Gambar 2"/></a>
+		<a href="images/3.jpg" title="Lorem ipsum dolor sit amet 3"><img src="images/3.jpg" alt="Gambar 3"/></a>
+	</div>
+
+
+	<br/>
+	<h2>Example 3 : Just Lightbox for single image</h2>
+	<p>If you want just set lightbox for single image, or some images which is not related each other you can try the following method.</p>
+
+	<h3>HTML</h3>
+	<pre class="code">
+&lt;a href="images/7.jpg" class="example3" title="Lorem ipsum dolor sit amet 7"&gt;
+	&lt;img src="images/7.jpg" alt="Gambar 7"/&gt;
+&lt;/a&gt;	</pre>
+	
+	<h3>Jquery</h3>
+	<pre class="code">
+$(document).ready(function() {	
+	$(".example3").justlightbox();
+});	</pre>
+	
+	<h3>Result</h3>
+	<a href="images/7.jpg" class="example3" title="Lorem ipsum dolor sit amet 7"><img src="images/7.jpg" alt="Gambar 7"/></a>
+
+</div>
+<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="js/mygallery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".example1").mygallery({
+			grid: 6
+		});
+		$(".example2").mygallery({
+			grid: 0
+		});
+		$(".example3").justlightbox();
+	});
+</script>
+</body>
+</html>
