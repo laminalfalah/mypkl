@@ -30,7 +30,7 @@
     ```php
     use App\Models\User;
     use App\Models\Role;
-    use App\Models\Slideshow
+    use App\Models\Slideshow;
 
     $adminRole = new Role();
     $adminRole->name = "admin"; 
@@ -61,12 +61,36 @@
     $operator->attachRole($operatorRole);
 
     $slide = [ 
-      [ 'slug' => 'tiket', 'images' => '/photos/slideshow/CONTOH-SLIDESHOW.png', 'post_status' => 'Publish', ], 
-      [ 'slug' => 'hotel', 'images' => '/photos/slideshow/slideshow.jpg', 'post_status' => 'Publish', ], 
-      [ 'slug' => 'tour', 'images' => '/photos/slideshow/slideshow1.png', 'post_status' => 'Publish', ], 
-      [ 'slug' => 'umroh', 'images' => '/photos/slideshow/slideshow3.jpg', 'post_status' => 'Publish', ], 
-      [ 'slug' => 'tour', 'images' => '/photos/slideshow/slideshow4.jpg', 'post_status' => 'Publish', ], 
-      [ 'slug' => 'umroh', 'images' => '/photos/slideshow/slideshow.jpg', 'post_status' => 'Publish', ], 
+      [ 
+        'slug' => 'tiket', 
+        'images' => '/photos/slideshow/CONTOH-SLIDESHOW.png', 
+        'post_status' => 'Publish'
+      ], 
+      [ 
+        'slug' => 'hotel',
+        'images' => '/photos/slideshow/slideshow.jpg',
+        'post_status' => 'Publish'
+      ], 
+      [ 
+        'slug' => 'tour', 
+        'images' => '/photos/slideshow/slideshow1.png', 
+        'post_status' => 'Publish'
+      ], 
+      [ 
+        'slug' => 'umroh', 
+        'images' => '/photos/slideshow/slideshow3.jpg', 
+        'post_status' => 'Publish'
+      ], 
+      [ 
+        'slug' => 'tour',
+        'images' => '/photos/slideshow/slideshow4.jpg',
+        'post_status' => 'Publish'
+      ], 
+      [ 
+        'slug' => 'umroh',
+        'images' => '/photos/slideshow/slideshow.jpg',
+        'post_status' => 'Publish'
+      ], 
     ];
 
     foreach ($slide as $k => $v) { 
