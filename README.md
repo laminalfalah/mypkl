@@ -1,8 +1,8 @@
-## Application Booking Tour and Umroh ##
+# Application Booking Tour and Umroh #
 
 **Application Booking Tour and Umroh** is a project in collage.
 
-### Installation ###
+## Installation ##
 
 * type `git clone https://github.com/laminal26-pct/mypkl.git projectname` to clone the repository 
 * type `cd projectname`
@@ -16,7 +16,6 @@
    * set DB_USERNAME
    * set DB_PASSWORD
 
-
 * if you use MAIL in .env file :
    * set MAIL_DRIVER
    * set MAIL_HOST
@@ -28,9 +27,9 @@
 * create a seeder file, example :
 
     ## don't forget
-
-    use App\Models\User
-    use App\Models\Role
+    ```php
+    use App\Models\User;
+    use App\Models\Role;
     use App\Models\Slideshow
 
     $adminRole = new Role();
@@ -73,7 +72,7 @@
     foreach ($slide as $k => $v) { 
       Slideshows::create($v); 
     }
-
+    ```
 * type `php artisan migrate --seed` to create and populate tables
 * edit *.env* for emails configuration
 
