@@ -25,7 +25,8 @@
    * set MAIL_ENCRYPTION
 
 * create a seeder file, example :
-
+    `php artisan make:seeder SeederTable`
+    after :
     ## don't forget
     ```php
     use App\Models\User;
@@ -97,6 +98,21 @@
       Slideshows::create($v); 
     }
     ```
+* call function in DatabaseSeeder.php 
+    ```php
+    class DatabaseSeeder extends Seeder
+    {
+      /**
+       * Run the database seeds.
+       *
+       * @return void
+       */
+      public function run()
+      {
+          $this->call(SeederTable::class);
+      }
+   }
+   ```
 * type `php artisan migrate --seed` to create and populate tables
 * edit *.env* for emails configuration
 
